@@ -5,9 +5,10 @@ This repository contains the data and R codes to reproduce all the tables and fi
 1) Codes: The R codes to generate the tables and figures are placed in two different folders - one for the tables and figures in the main paper, and the other for those in the supplementary document. The details of the R code files are as follows:
 
 Folder "R Codes for main paper" contains the following codes (see the descriptions for each):
--**1.Figure 4.3_Left_panel_p_values.R** -Generates the p-values displayed in the left panel of Figure 4.3.
--**2.Figure 4.3_Right_panel_p_values.R** -Generates the p-values displayed in the right  panel of Figure 4.3
--**3.Figure 5.1.R** -Generates the p-values displayed in Figure 5.1.
+
+- **1.Figure 4.3_Left_panel_p_values.R** - Generates the p-values displayed in the left panel of Figure 4.3.
+- **2.Figure 4.3_Right_panel_p_values.R** - Generates the p-values displayed in the right panel of Figure 4.3.
+- **3.Figure 5.1.R** - Generates the p-values displayed in Figure 5.1.
 
 Folder "R Codes for the supplementary document" contains the following codes (see the descriptions for each):
 **1.Table D.1.R** - Creates Table D.1 
