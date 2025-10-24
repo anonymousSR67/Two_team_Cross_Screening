@@ -5,6 +5,11 @@ library(tidyr)
 library(knitr)
 library(kableExtra)
 
+#This code generates Figure F.1 in the Supplementary Material-1. 
+
+#The data for running this code is simulated within the code itself. 
+
+
 # ---------------- Parameters ----------------
 I <- 120        # sample size (no. of matched pairs)
 K <- 30         # total number of outcomes
@@ -232,4 +237,5 @@ p <- ggplot(results_plot, aes(x = mu, y = Power, color = Teams, group = Teams)) 
 # ---------------- Display / Save ----------------
 print(p)
 #ggsave("matrix_plot.pdf", p, width = 14, height = 18)
+
 
