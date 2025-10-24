@@ -25,6 +25,11 @@ Folder **"R Codes for the supplementary document"** contains the following codes
 
 =======================================================================  
   
-2) Data: The main master data can be downloaded from this link: https://www.dropbox.com/scl/fo/4y7emw2qlwqk8xyno0ac1/AA3M7IX2CG223KtXpuMogLw?rlkey=iim5i0if7ew2evho083rh6epe&st=5nrhulhv&dl=0 . It was not possible to upload the master data here in gihub due to size issue. Some supporting data files have been placed in the "Data" folder here. The "Data" folder contains the following csv files (see the descriptions for each)
+2) **Data**: The main master data can be downloaded from this link: https://www.dropbox.com/scl/fo/4y7emw2qlwqk8xyno0ac1/AA3M7IX2CG223KtXpuMogLw?rlkey=iim5i0if7ew2evho083rh6epe&st=5nrhulhv&dl=0 . It was not possible to upload the master data here in gihub due to size issue. Some supporting data files have been placed in the "Data" folder here. The "Data" folder contains the following csv files (see the descriptions for each)
 
-   
+ - **Catholics_matched_pairs.csv** - Contains matched pair IDs for Catholic participants in the study.
+- **Pregnancy_Intention_info_for_control_Catholics.csv** - Stores pregnancy intention data for Catholic control group members.
+- **Pregnancy_Intention_info_for_control_non_Catholics.csv** - Contains pregnancy intention data for non-Catholic control group members.
+- **Pregnancy_Intention_info_for_treated_Catholics.csv** - Stores pregnancy intention data for Catholic treatment group members.
+- **Pregnancy_Intention_info_for_treated_non_Catholics.csv** - Contains pregnancy intention data for non-Catholic treatment group members.
+- **non_Catholics_matched_pairs.csv** - Contains matched pair IDS for non-Catholic participants in the study.  
