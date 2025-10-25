@@ -234,8 +234,9 @@ p <- ggplot(results_plot, aes(x = mu, y = Power, color = Teams, group = Teams)) 
     panel.grid.minor = element_line(color = "grey90")
   )
 
-# ---------------- Display / Save ----------------
+# ---------------- Display----------------
 print(p)
-#ggsave("matrix_plot.pdf", p, width = 14, height = 18)
+
+
 
 
