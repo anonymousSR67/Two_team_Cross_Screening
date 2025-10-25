@@ -6,8 +6,8 @@ library(ggplot2)
 library(sensitivitymv)
 library(here)
 
-data <- read_dta(file = "WLS_master_data.dta")
-cath_match <- read.csv("Catholics_matched_pairs.csv")
+data <- read_dta(here("Data", "WLS_master_data.dta"))
+cath_match <- read.csv(here("Data", "Catholics_matched_pairs.csv"))
 
 data_f <- data.frame(data)
 data_f <- data_f[which(data_f$rtype=="g"),] #filter: graduate
@@ -121,7 +121,7 @@ top_left_result
 
 #======================== Top Right part================================
 
-cath_match <- read.csv("C:/Study_2023/Cross_Screen/data/noncath_match_with_year.csv")
+cath_match <- read.csv(here("Data", "non_Catholics_matched_pairs.csv"))
 
 vv <- c("z_mu001rec","z_mu003rer","z_mu004rer","z_mu005rer","z_mu006rer","z_mu007rer",
         "z_mu008rer","z_mu009rer","z_mu010rer","z_mu011rer","z_mu012rer",
@@ -296,7 +296,7 @@ bottom_left_result <- c(top_right_result[1],low_positive_p_val, somatic_p_val, t
 
 #================Bottom right results=======
 
-cath_match <- read.csv("C:/Study_2023/Cross_Screen/data/cath_match_with_year.csv")
+cath_match <- read.csv(here("Data", "Catholics_matched_pairs.csv"))
 cath_match <- cath_match[,-c(1)]
 
 vv <- c("z_mu001rec","z_mu003rer","z_mu004rer","z_mu005rer","z_mu006rer","z_mu007rer",
@@ -375,6 +375,7 @@ print("Bottom Left values are")
 bottom_left_result
 print("Bottom Right values are")
 bottom_right_result
+
 
 
 
