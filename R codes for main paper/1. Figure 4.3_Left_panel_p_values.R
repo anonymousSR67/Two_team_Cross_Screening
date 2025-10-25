@@ -3,7 +3,7 @@ library(sensitivitymv)
 library(DOS)
 library(haven)
 library(caret)
-setwd("C:/Study_2023/Cross_Screen/Data_storage")
+library(here)
 
 
 #==This code reproduces all the p-values reported in the left panel of Figure 6.1.
@@ -25,16 +25,10 @@ setwd("C:/Study_2023/Cross_Screen/Data_storage")
 #== (iv) Pregnancy intention information for the control non-Catholics - extracted from the master file
  
 
-
-
-data <- read_dta(file = "WLS_master_data.dta")
-cath_match <- read.csv("non_Catholics_matched_pairs.csv")
-trt_child <- read.csv("Pregnancy_Intention_info_for_treated_non_Catholics.csv")
-cont_child <- read.csv("Pregnancy_Intention_info_for_control_non_Catholics.csv")
-
-
-
-
+data <- read_dta(here("Data", "WLS_master_data.dta"))
+cath_match <- read.csv(here("Data", "non_Catholics_matched_pairs.csv"))
+trt_child <- read.csv(here("Data", "Pregnancy_Intention_info_for_treated_non_Catholics.csv"))
+cont_child <- read.csv(here("Data", "Pregnancy_Intention_info_for_control_non_Catholics.csv"))
 
 
 #== Extracting information for only the female graduates (as our study focuses on them only) 
@@ -286,6 +280,7 @@ pv5 <- testing$pval
 
 print("Hence the p-values in the left panel of Figure 6.1 are- ")
 print (c(pv1, pv2, pv3, pv4, pv5))
+
 
 
 
