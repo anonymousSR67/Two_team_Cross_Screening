@@ -3,7 +3,7 @@ library(sensitivitymv)
 library(DOS)
 library(haven)
 library(caret)
-setwd("C:/Study_2023/Cross_Screen/Data_storage")
+library(here)
 
 
 #==This code reproduces all the p-values reported in the right panel of Table D.5.
@@ -26,13 +26,11 @@ setwd("C:/Study_2023/Cross_Screen/Data_storage")
  
 
 
-data <- read_dta(file = "WLS_master_data.dta")
-cath_match <- read.csv("Catholics_matched_pairs.csv")
+data <- read_dta(here("Data", "WLS_master_data.dta"))
+cath_match <- read.csv(here("Data", "Catholics_matched_pairs.csv"))
 cath_match <- cath_match[,-c(1)]
-trt_child <- read.csv("Pregnancy_Intention_info_for_treated_Catholics.csv")
-cont_child <- read.csv("Pregnancy_Intention_info_for_control_Catholics.csv")
-
-
+trt_child <- read.csv(here("Data", "Pregnancy_Intention_info_for_treated_Catholics.csv"))
+cont_child <- read.csv(here("Data", "Pregnancy_Intention_info_for_control_Catholics.csv"))
 
 
 #== Extracting information for only the female graduates (as our study focuses on them only) 
@@ -150,6 +148,7 @@ senmwCI(SP[,1]-SP[,4], gamma = 1.2, one.sided = F)
 
 #============ Step 6: effect modification by age for Gamma =1.2====
 senmwCI(temp11-temp2, gamma = 1.2, one.sided = F)
+
 
 
 
