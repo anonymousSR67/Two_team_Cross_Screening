@@ -4,12 +4,11 @@ library(xtable)
 library(lsr)
 library(ggplot2)
 library(sensitivitymv)
+library(here)
 
-setwd("C:/Study_2023/Cross_Screen/Data_storage")
-
-cath_match <- read.csv("Catholics_matched_pairs.csv")
+cath_match <- read.csv(here("Data", "Catholics_matched_pairs.csv"))
 cath_match <- cath_match[,-c(1)]
-data <- read_dta(file = "WLS_master_data.dta")
+data <- read_dta(here("Data", "WLS_master_data.dta"))
 data_f <- data.frame(data)
 data_f <- data_f[which(data_f$rtype=="g"),] #filter: graduate
 data_f <- data_f[which(data_f$z_sexrsp==2),] #filter: female
@@ -122,4 +121,5 @@ interpersonal__val <- c(mean(ddd[,1],na.rm = T),mean(ddd[,4],na.rm = T), tt$p.va
 
 print("Hence the values are")
 print(rbind(cesd__val,depressed__val,lowpositive__val, somatic__val, interpersonal__val))
+
 
