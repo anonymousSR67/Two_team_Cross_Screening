@@ -8,14 +8,12 @@ library(reshape2)
 library(designmatch)
 library(survival)
 library(devtools)
-setwd("C:/Study_2023/Cross_Screen/Data_storage")
-
+library(here)
 
 
 #======Data Generation========
 
-
-data <- read_dta(file = "WLS_master_data.dta")
+data <- read_dta(here("Data", "WLS_master_data.dta"))
 data_f <- data.frame(data)
 data_f <- data_f[which(data_f$rtype=="g"),] #filter: graduate
 data_f <- data_f[which(data_f$z_sexrsp==2),] #filter: females
@@ -740,5 +738,6 @@ covariates <- c("no_children","education","depressed_before","depressed_before_m
                 "openness","openness_mis","age","married")
 plot.dataframe=data.frame(abs.stand.diff=c(abs.stand.diff.before,abs.stand.diff.after),covariates=rep(covariates,2),type=c(rep("Before",length(covariates)),rep("After",length(covariates))))
 ggplot(plot.dataframe,aes(x=abs.stand.diff,y=covariates))+geom_point(size=5,aes(shape=factor(type)))+scale_shape_manual(values=c(4,1))+geom_vline(xintercept=c(.1,.2),lty=2)
+
 
 
