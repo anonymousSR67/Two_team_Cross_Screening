@@ -4,9 +4,8 @@ library(xtable)
 library(lsr)
 library(ggplot2)
 library(sensitivitymv)
+library(here)
 
-
-setwd("C:/Study_2023/Cross_Screen/Data_storage")
 data <- read_dta(file = "WLS_master_data.dta")
 cath_match <- read.csv("Catholics_matched_pairs.csv")
 
@@ -376,5 +375,6 @@ print("Bottom Left values are")
 bottom_left_result
 print("Bottom Right values are")
 bottom_right_result
+
 
 
