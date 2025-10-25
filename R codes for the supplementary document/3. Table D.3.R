@@ -5,13 +5,10 @@ library(lsr)
 library(ggplot2)
 library(sensitivitymv)
 library(sensitivitymw)
+library(here)
 
-
-
-setwd("C:/Study_2023/Cross_Screen/Data_storage")
-
-cath_match <- read.csv("non_Catholics_matched_pairs.csv")
-data <- read_dta(file = "WLS_master_data.dta")
+cath_match <- read.csv(here("Data", "non_Catholics_matched_pairs.csv"))
+data <- read_dta(here("Data", "WLS_master_data.dta"))
 data_f <- data.frame(data)
 data_f <- data_f[which(data_f$rtype=="g"),] #filter: graduate
 data_f <- data_f[which(data_f$z_sexrsp==2),] #filter: female
@@ -284,5 +281,6 @@ for(l in 1: length(col))
   results <- rbind(results,summary_SF12)
 }
 Third_part_p_values <- results
+
 
 
