@@ -4,13 +4,11 @@ library(xtable)
 library(lsr)
 library(ggplot2)
 library(sensitivitymv)
+library(here)
 
-
-setwd("C:/Study_2023/Cross_Screen/Data_storage")
-cath_match <- read.csv("Catholics_matched_pairs.csv")
+cath_match <- read.csv(here("Data", "Catholics_matched_pairs.csv"))
 cath_match <- cath_match[,-c(1)]
-
-data <- read_dta(file = "WLS_master_data.dta")
+data <- read_dta(here("Data", "WLS_master_data.dta"))
 data_f <- data.frame(data)
 data_f <- data_f[which(data_f$rtype=="g"),] #filter: graduate
 data_f <- data_f[which(data_f$z_sexrsp==2),] #filter: female
@@ -46,3 +44,4 @@ for(l in 1: length(col))
 PWB_92 <- results
 
 #PWB_92 contains the numbers in Table D.2.
+
